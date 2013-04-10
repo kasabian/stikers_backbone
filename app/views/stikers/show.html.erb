@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @stiker.name %>
+</p>
+
+<p>
+  <b>X:</b>
+  <%= @stiker.x %>
+</p>
+
+<p>
+  <b>Y:</b>
+  <%= @stiker.y %>
+</p>
+
+
+<%= link_to 'Edit', edit_stiker_path(@stiker) %> |
+<%= link_to 'Back', stikers_path %>

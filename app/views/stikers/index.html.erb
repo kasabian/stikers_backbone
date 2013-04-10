@@ -1,0 +1,27 @@
+<h1>Listing stikers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>X</th>
+    <th>Y</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stikers.each do |stiker| %>
+  <tr>
+    <td><%= stiker.name %></td>
+    <td><%= stiker.x %></td>
+    <td><%= stiker.y %></td>
+    <td><%= link_to 'Show', stiker %></td>
+    <td><%= link_to 'Edit', edit_stiker_path(stiker) %></td>
+    <td><%= link_to 'Destroy', stiker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stiker', new_stiker_path %>

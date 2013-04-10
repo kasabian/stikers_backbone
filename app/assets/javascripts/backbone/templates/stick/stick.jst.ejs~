@@ -1,0 +1,5 @@
+      <div class = "stick" >
+       <div class = "close_stick">x</div>
+       <span> <%= name%> </span>
+       <input type="text" class = "edit hidden" value = "<%= name%>">
+      </div>

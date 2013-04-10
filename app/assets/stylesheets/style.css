@@ -1,0 +1,59 @@
+ .stick_area
+  { 
+  	width: 900px;
+    height: 600px;
+    border: 1px solid blue;
+    margin: auto;
+  }
+
+  .stick
+  {
+    border: 1px solid orange; 
+  	padding: 20px;
+  	position: absolute; 
+  	background-color: #FFFEBF;
+  	border-radius: 10px;
+    width: 170px; 
+  }
+
+
+  .editing span
+  {
+    visibility: hidden;
+  } 
+
+  .editing input
+  {
+    position: relative;  
+  	visibility: visible;
+  }
+
+  .stick span
+  {
+    position: absolute;
+  }
+
+  .stick .edit 
+  {
+
+    
+  }  
+  .hidden
+  {
+  	visibility: hidden;  	
+  }
+
+
+  .close_stick
+  {
+    background-color: red;
+    padding: 0px;
+    width: 12px;
+    position: absolute;
+    padding-left: 5px;
+    border-radius: 8px;
+    color: white;
+    top: 5px;
+    right: 12px;
+    cursor: pointer;
+  }
