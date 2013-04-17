@@ -11,6 +11,10 @@ $(function(){
     initialize: function() {
        this.Sticks = new StickCollection();
        this.Sticks.on("reset",this.addAllStick,this)
+       this.Sticks.on("all",function(par) {
+	 console.log(par);
+      },this);
+       
        this.Sticks.fetch();  
     },      
   
@@ -20,32 +24,20 @@ $(function(){
     },
 
     createStick: function(el) {
-      var stick = new StickModel({x:el.pageX,y : el.pageY}),
-          view = new StickView({model : stick}),
-	  self = this; 	
-	  
+      var stick = new StickModel({x:el.pageX,y : el.pageY}); 
       this.Sticks.push(stick);
-      
-      stick.save(stick.attributes,{ 
-	success: function() {
-	  self.$el.append(view.render().el);	
-        },
-	error: function(m,response) {
-	  alert("server error");
-	}  
-        
-      });      
-      
+      this.addStick(stick);
       return false;
     },
     
-    updateStick: function(stick) {
-       var view = new StickView({model : stick});
+    addStick: function(stick) {
+       var view = new StickView({model : stick}),				       
+	   drag_view = new DragView({model : stick,el : view.el});
        this.$el.append(view.render().el);
     },  
     
     addAllStick: function() {
-      this.Sticks.each(this.updateStick,this);
+      this.Sticks.each(this.addStick,this);
     }  
 
   });

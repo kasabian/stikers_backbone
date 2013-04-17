@@ -4,7 +4,8 @@
       return {
         name: "new sticks",
         x: "0",
-        y: "0"
+        y: "0",
+        other: "other"  
       }
     }
 
